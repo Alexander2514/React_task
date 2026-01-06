@@ -1,0 +1,25 @@
+.TodoSearch {
+  background-color: #f4e4bc; /* Color pergamino */
+  background-image: radial-gradient(#d6caab 0%, #ccb38f 100%);
+  border: 3px double #5d4037; /* Borde doble estilo marco */
+  border-radius: 4px;
+  color: #3e2723;
+  font-family: 'MedievalSharp', cursive, serif; /* Si puedes, usa esta fuente de Google Fonts */
+  font-size: 24px;
+  padding: 12px;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.TodoSearch::placeholder {
+  color: rgba(62, 39, 35, 0.6);
+  font-style: italic;
+}
+
+.TodoSearch:focus {
+  border-color: #8d6e63;
+  box-shadow: 0 0 15px #e2c08d;
+}

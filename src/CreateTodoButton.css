@@ -1,0 +1,25 @@
+.TodoButton {
+      background-color: #b71c1c; /* Rojo sello de cera */
+  border: 2px solid #ffca28; /* Borde dorado */
+  border-radius: 50%;
+  color: #ffca28;
+  font-size: 40px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+    }
+
+.TodoButton:hover {
+      transform: scale(1.1) rotate(10deg);
+  background-color: #d32f2f;
+    }
+
+
+@media (max-width: 600px) {
+.TodoButton {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    bottom: 20px; /* Asegúrate de que no tape el texto */
+    right: 10px;
+  }}

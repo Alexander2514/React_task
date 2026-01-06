@@ -1,11 +1,10 @@
 import logo from './platzi.webp';
-import './App.css';
 import { TodoCounter } from './TodoCounter';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { CreateTodoButton } from './CreateTodoButton';
 import { TodoItem } from './TodoItem';
-import React from 'react';
+import React from 'react';//revision
 
 const defaultTodos = [{ text: 'Cortar cebolla', completed: true },
 { text: 'Tomar el curso de intro a React', completed: false },

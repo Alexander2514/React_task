@@ -1,0 +1,78 @@
+.TodoItem{
+    background: #d7ccc8; /* Madera clara o papel grueso */
+  border-left: 8px solid #5d4037; /* Un "borde de madera" a la izquierda */
+  margin: 15px 20px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.Todo-item-p{
+  margin: 0;
+  font-size: 20px;
+  color: #2b1d1a;
+  font-weight: bold;
+}
+
+.TodoItem-Complete{
+    text-decoration: line-through;
+  color: #795548 !important;
+  opacity: 0.6;
+}
+
+.TodoItem::before{
+    content: '•';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: #444;
+  font-size: 10px;
+}
+
+.icon{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  /* back
+  ground-color: #CCC; */
+}
+
+.Icon-Check {
+  position: absolute;
+  left: 12px;
+}
+.Icon-active{
+    color: #4caf50;
+}
+
+.Icon-Delete {
+  position: absolute;
+  top: -24px;
+  right: 0;
+}
+.Icon-Delete:hover {
+  color: red;
+}
+
+
+@media (max-width: 600px) {
+  .TodoItem {
+    margin: 10px 5%; /* Menos margen lateral en móvil */
+    padding: 15px;
+    flex-direction: column; /* Apila el texto y los iconos si el espacio es muy poco */
+    gap: 10px;
+  }
+
+  .TodoItem p {
+    font-size: 18px;
+    text-align: center;
+  }
+  }
