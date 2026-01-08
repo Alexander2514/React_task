@@ -1,25 +1,39 @@
+/* TodoSearch.css */
 .TodoSearch {
-  background-color: #f4e4bc; /* Color pergamino */
-  background-image: radial-gradient(#d6caab 0%, #ccb38f 100%);
-  border: 3px double #5d4037; /* Borde doble estilo marco */
-  border-radius: 4px;
-  color: #3e2723;
-  font-family: 'MedievalSharp', cursive, serif; /* Si puedes, usa esta fuente de Google Fonts */
+  background: #f4e4bc;
+  background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+  
+  /* Tamaño controlado */
+  width: 95%;
+  max-width: 640px; /* Un poco más que los 500px de la lista */
+  height: 64px;
+  margin: 0 auto 32px auto;
+  display: block;
+  
+  /* Bordes de pergamino */
+  border: 2px solid #5d4037;
+  border-bottom: 4px solid #3e2723; /* Base más pesada */
+  padding: 0 24px;
+  font-family: 'MedievalSharp', serif;
   font-size: 24px;
-  padding: 12px;
-  width: calc(100% - 40px);
-  margin: 0 20px;
-  outline: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: #3e2723;
   text-align: center;
+  
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.3);
+  outline: none;
+  
+  background-color: rgba(226, 192, 141, 0.9);
+  transition: all 0.3s ease;
 }
 
 .TodoSearch::placeholder {
-  color: rgba(62, 39, 35, 0.6);
+  color: #8d6e63;
   font-style: italic;
 }
 
 .TodoSearch:focus {
-  border-color: #8d6e63;
-  box-shadow: 0 0 15px #e2c08d;
+  transform: translateY(-2px);
+  border-color: #8b0000; /* El borde se "calienta" al escribir */
+ box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+
 }

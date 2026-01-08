@@ -1,25 +1,69 @@
-.TodoButton {
-      background-color: #b71c1c; /* Rojo sello de cera */
-  border: 2px solid #ffca28; /* Borde dorado */
-  border-radius: 50%;
-  color: #ffca28;
-  font-size: 40px;
+.CreateTodoButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  width: 70px;
+  height: 70px;
+  background-color: #8b0000; 
+  color: #ffca28; 
+  border: none;
   cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-  transition: transform 0.2s;
-    }
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45% 55% 50% 50% / 50% 45% 55% 50%; /* Lacre derretido */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6), inset 0 0 15px rgba(0,0,0,0.5);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
-.TodoButton:hover {
-      transform: scale(1.1) rotate(10deg);
-  background-color: #d32f2f;
-    }
+/* Efecto de Estampado al hacer Click / Hover */
+.CreateTodoButton:hover {
+  transform: scale(1.1) rotate(5deg);
+  background-color: #a00000;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+}
+
+/* --- NUEVO: EFECTO DE CHISPAS AL CLIC ---  aniacion de estampado*/
+.CreateTodoButton:active {
+  animation: stampButton 0.2s ease-out forwards;
+}
 
 
-@media (max-width: 600px) {
-.TodoButton {
-    width: 50px;
-    height: 50px;
-    font-size: 30px;
-    bottom: 20px; /* Asegúrate de que no tape el texto */
-    right: 10px;
-  }}
+.CreateTodoButton:active::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* Crea partículas de lacre saltando */
+  box-shadow: 
+    0 -45px 0 #b71c1c, 35px -35px 0 #ffca28, 
+    45px 0 0 #b71c1c, 35px 35px 0 #ffca28,
+    0 45px 0 #b71c1c, -35px 35px 0 #ffca28,
+    -45px 0 0 #b71c1c, -35px -35px 0 #ffca28;
+  animation: waxSparks 0.4s ease-out forwards;
+}
+
+@keyframes waxSparks {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes stampButton {
+  0% { transform: scale(1.1); }
+  50% { transform: scale(0.85); filter: brightness(0.7); }
+  100% { transform: scale(1); }
+}
+
+/* Detalle visual: el borde del sello */
+.CreateTodoButton::after {
+  content: '';
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border: 2px solid rgba(255, 202, 40, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
